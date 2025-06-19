@@ -1,0 +1,11 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    list-style: none;
+}
+
+.java{
+    text-align: center;
+    margin-top: 30px;
+    color: blue;
+}
