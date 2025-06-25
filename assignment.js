@@ -205,3 +205,178 @@ console.log(greetUser("simple", "afternoon"))
 // - Use `switch` statements or `if-else` statements to implement this function.
 
 // These assignments should help you practice your JavaScript skills and reinforce your understanding of conditional statements and functions. Good luck!
+
+let sum = 0
+let i = 1
+
+while(i <= 15){
+    if(i % 2 !== 0){
+        sum += i;
+    }
+    i++
+}
+console.log(sum)
+
+
+let numbers = [4,7,8,9,1]
+let smallest = numbers[0]
+
+for(let num of numbers){
+    if (num < smallest) {
+        smallest = num
+    }
+}
+console.log(smallest)
+
+let num = 5
+for(let b = 1; b <= 10; b++){
+    console.log(`${num} * ${b} ${num * b}`)
+}
+
+for(let c = 1; c <= 100; c++){
+    if (c % 4 === 0 && c % 9 === 0) {
+        console.log("four nine")
+    }else if (c % 4 === 0) {
+        console.log("four")
+    }else if (c % 9 === 0) {
+        console.log("nine")
+    }else{
+        console.log(c)
+    }
+    
+}
+
+for(let d = 100; d <= 200; d++){
+    if(d % 7 !== 0){
+        console.log(d)
+    }
+}
+
+for(let e = 1; e <= 20; e++){
+    if (e % 3 === 0 && e % 5 === 0) {
+        console.log("FizzBuzz")
+    }else if ( e % 3 === 0) {
+        console.log("Fuzz")
+    }else if (e % 5 === 0) {
+        console.log("Buzz")
+    } else {
+        console.log(e)
+    }
+}
+
+
+// It looks like you've learned about different types of loops in JavaScript, including:
+
+// 1. For Loop
+// 2. While Loop
+// 3. Do-While Loop
+// 4. For...of Loop
+// 5. For...in Loop
+
+// Here's an assignment to practice your skills:
+
+// *Assignment:*y
+
+// Write a JavaScript program that uses each of the above loop types to solve the following problems:
+
+// 1. *For Loop:* Calculate the sum of all numbers from 1 to 100.
+let summ = 0
+for(let a = 1; a <= 100; a++){
+    summ += a
+}
+console.log(summ)
+
+// 2. *While Loop:* Print the numbers from 10 to 1 in reverse order.
+let g = 10
+
+while(g >= 1){
+    console.log(g)
+    g--;
+}
+
+
+
+// 3. *Do-While Loop:* Calculate the product of all numbers from 1 to 5.
+let product = 1
+let u = 1
+
+do{
+    product *= u;
+    u++
+}while(u <= 5)
+    console.log(product)
+
+
+// 4. *For...of Loop:* Iterate over an array of strings and print each string in uppercase.
+let fruit = ["Apple", "Manago", "Banana",]
+for(let item of fruit){
+    console.log(item.toUpperCase())
+}
+// 5. *For...in Loop:* Iterate over an object with properties `name`, `age`, and `city`, and print each property and its value.
+let persons = {
+    name: "Simple",
+    age: 30,
+    city: "Lagos"
+}
+
+for(let item in persons){
+    console.log(`${item}: ${persons[item]}`)
+}
+
+
+for(let item of Object.values(persons)){
+    console.log(item)
+}
+
+// *Additional Challenges:*
+
+// 1. Use a `for` loop to print the multiplication table for a given number (e.g., 5).
+let nums = 5
+
+for(let h = 1; h <= 5; h++){
+    console.log(`${nums} * ${h} = ${nums * h}`)
+}
+
+// 2. Use a `while` loop to simulate a countdown timer that starts from 10 and decreases by 1 each second.
+let countdown = 10
+
+while(countdown >= 0){
+    console.log(countdown)
+    countdown--
+}
+// 3. Use a `do-while` loop to ask the user for input until they enter a valid number.
+let userInput; 
+
+do{
+    userInput = parseInt(prompt("Please enter a valid number. between 10 and 20"))
+    if (isNaN(userInput) || userInput < 10 || userInput > 20) {
+        alert("That not a valid number. please enter between 10 and 20")
+    }
+}while(isNaN(userInput) || userInput < 10 || userInput > 20)
+    alert(`Great,You enter a valid number! ${userInput}`)
+
+// 4. Use a `for...of` loop to iterate over a string and print each character.
+let fruits = ["Apple", "Mango", "Banana"]
+
+for(let item of fruits){
+    console.log(`${item}`)
+}
+// 5. Use a `for...in` loop to iterate over an object and print only the property names.
+ let personss = {
+    name: "Osifo",
+    age: 20,
+    gander: "male",
+    city: "Abia state"
+ }
+
+ for(let item in personss){
+    console.log(`${item}`)
+ }
+
+// *Tips:*
+
+// - Make sure to use the correct loop type for each problem.
+// - Use console.log() to print the results.
+// - Test your code thoroughly to ensure it works as expected.
+
+// I hope this assignment helps you practice your loop skills! Let me know if you have any questions or need further clarification.
