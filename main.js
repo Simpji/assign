@@ -115,6 +115,8 @@
 // let result4 = "" || undefined
 // console.log(result4)
 
+
+
 // //learning if/else statement switch
 // //if/else statement is a type of conditional statement that allows you to execute different blocks of code bassed on conditions
 
@@ -399,18 +401,155 @@ for(let item of Object.values(person)){
 // }
 // ```
 
+// adding money to your bank account
+let c = 4
+console.log(c += 6)
+
+// checking if two thing are not the same
+let x = 5;
+console.log(x != 4)
+
+
+// checking if two thing are not the same in value and type
+let b = 6;
+console.log(b !== "6")
+
+// multiplying number together
+let d = 3 
+console.log(d * 20)
+
 // Loops are useful for:
 
-// - Repeating a task multiple times
-// - Iterating over a collection of data
-// - Performing calculations that require repeated operations
 
-// When using loops, be careful to avoid:
+//DOM
+// The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree-like data structure, where each node in the tree represents an element, attribute, or piece of text in the document.
 
-// - Infinite loops: Make sure the loop condition is eventually false to avoid an infinite loop.
-// - Off-by-one errors: Pay attention to the starting and ending with the loop.
-// - Unintended side effects: Be mindful of any side effects that the loop may have on the surrounding code.
+const headerElement = document.querySelector("#header")
+headerElement.style.backgroundColor = "red"
+headerElement.style.color = "white"
+headerElement.style.textAlign = "center"
+headerElement.style.fontSize = "25px"
+
+const listElement = document.querySelectorAll("li")
+    listElement.forEach((item) => {
+        item.style.fontSize = "30px"
+        item.style.textAlign = "center"
+        item.style.color = "purple"
+    })
+
+
+//     In JavaScript, events refer to actions or occurrences that happen in a web page, such as user interactions, network requests, or changes in the state of a page. JavaScript provides a way to respond to these events using event handlers or event listeners.
+
+// Here are some common types of events in JavaScript:
+
+// 1. *Mouse events*:
+//     - `click`: Fired when an element is clicked.
+//     - `dblclick`: Fired when an element is double-clicked.
+//     - `mousedown`: Fired when a mouse button is pressed.
+//     - `mouseup`: Fired when a mouse button is released.
+//     - `mousemove`: Fired when the mouse is moved.
+// 2. *Keyboard events*:
+//     - `keydown`: Fired when a key is pressed.
+//     - `keyup`: Fired when a key is released.
+//     - `keypress`: Fired when a key is pressed and released.
+// 3. *Form events*:
+//     - `submit`: Fired when a form is submitted.
+//     - `change`: Fired when the value of a form element changes.
+//     - `focus`: Fired when an element receives focus.
+//     - `blur`: Fired when an element loses focus.
+// 4. *Window events*:
+//     - `load`: Fired when a page has finished loading.
+//     - `unload`: Fired when a page is being unloaded.
+//     - `resize`: Fired when the window is resized.
+//     - `scroll`: Fired when the window is scrolled.
 
 
 
+const text = document.querySelector(".MyText")
+const button = document.querySelector(".MyButton")
+ 
+button.addEventListener("click", () => {
+    text.innerHTML = (" I clicked the button")
+})
 
+
+// let count = 0
+
+// const countDisplay = document.querySelector('.count')
+// const buttons = document.querySelectorAll(".cout button")
+
+// buttons[0].addEventListener("click", () => {
+//     count--;
+//     countDisplay.textContent = count
+// })
+
+// buttons[1].addEventListener("click", () => {
+//     count = 0
+//     countDisplay.textContent = count
+// })
+
+// buttons[2].addEventListener("click", () => {
+//     count++;
+//     countDisplay.textContent = count
+// })
+
+
+
+let count = 0;
+
+const countDisplay = document.querySelector('.count');
+const buttons = document.querySelectorAll('.cout button');
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const action = button.getAttribute('data-action');
+
+    if (action === "decrease") count--;
+    if (action === "reset") count = 0;
+    if (action === "increase") count++;
+
+    countDisplay.textContent = count;
+
+    color()
+    counts()
+  });
+});
+
+
+const color = () =>{
+    if (count < 0) {
+        countDisplay.style.color = "red"
+    }else if (count > 0) {
+        countDisplay.style.color = "green"
+    }else{
+        countDisplay.style.color = "black"
+    }
+}
+
+const counts = () => {
+    if (count % 3 === 0 && count % 5 === 0) {
+        alert("FuzzBuzz")
+    }else if (count % 3 === 0) {
+        alert("Fuzz")
+    }else if (count % 5 === 0) {
+        alert("Buzz")
+    }
+}
+
+
+// const result = document.querySelector('.result')
+// const decrease = document.querySelector('.decrease')
+// const reset = document.querySelector('.reset')
+// const increase = document.querySelector('.increase')
+
+// decrease.addEventListener("click", () => {
+//     result.innerHTML--;
+// })
+
+// reset.addEventListener("click", () => {
+//     result.innerHTML = 0;
+// })
+
+// increase.addEventListener("click", () => {
+//     result.innerHTML++;
+// })

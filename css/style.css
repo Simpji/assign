@@ -9,3 +9,58 @@
     margin-top: 30px;
     color: blue;
 }
+
+.couter{
+    text-align: center;
+    background-color: aqua;
+    height: 50vh;
+    padding-top: 20px;
+}
+.coute{
+    color: red;
+}
+
+.count{
+    font-size: 30px;;
+}
+
+.cout{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.cout button{
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff;
+    list-style: none;
+    cursor: pointer;
+    padding: 1%;
+    /* border-radius: 30px; */
+}
+
+.res{
+    background-color: purple;
+}
+
+.de{
+    background-color: red;
+}
+
+.inc{
+    background-color: green;
+}
+
+.reset{
+    background-color: purple;
+}
+
+.decrease{
+    background-color: red;
+}
+
+.increase{
+    background-color: green;
+}
