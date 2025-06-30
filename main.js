@@ -8,7 +8,7 @@
 
 // // const firstName = "Simple"
 // // firstName = "   Chi"
-// // val = firstName;
+// // val = firstName; 
 // // val = lastName;
 
 // // console.log(val)

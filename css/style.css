@@ -64,3 +64,52 @@
 .increase{
     background-color: green;
 }
+
+/* styling assignment */
+
+.wrapper {
+    height: 500px; /* or any fixed value */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 50%;
+    height: 50%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+/* .calculator{
+    width: 50%;
+    height: 50%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: blue;
+} */
+.calculator input{
+    padding: 15px;
+    font-size: 20px;
+    
+}
+.operation{
+    padding: 8px;
+    cursor: pointer;
+}
+.calculate{
+    padding: 8px;
+    cursor: pointer;
+}

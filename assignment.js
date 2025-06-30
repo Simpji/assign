@@ -345,15 +345,37 @@ while(countdown >= 0){
     countdown--
 }
 // 3. Use a `do-while` loop to ask the user for input until they enter a valid number.
-let userInput; 
+// let userInput; 
 
-do{
-    userInput = parseInt(prompt("Please enter a valid number. between 10 and 20"))
-    if (isNaN(userInput) || userInput < 10 || userInput > 20) {
-        alert("That not a valid number. please enter between 10 and 20")
-    }
-}while(isNaN(userInput) || userInput < 10 || userInput > 20)
-    alert(`Great,You enter a valid number! ${userInput}`)
+// do{
+//     userInput = parseInt(prompt("Please enter a valid number. between 10 and 20"))
+//     if (isNaN(userInput) || userInput < 10 || userInput > 20) {
+//         alert("That not a valid number. please enter between 10 and 20")
+//     }
+// }while(isNaN(userInput) || userInput < 10 || userInput > 20)
+//     alert(`Great,You enter a valid number! ${userInput}`)
+
+
+
+// `parseFloat` is used to convert the input values from strings to numbers. When you enter a number in an input field, it's treated as a string by default. If you try to perform arithmetic operations on strings, you'll get unexpected results.
+
+// For example, if you enter `10` and `5` in the input fields and select the `+` operation, without `parseFloat`, the result would be `"105"` instead of `15`. This is because the `+` operator would concatenate the two strings instead of adding them as numbers.
+
+// `parseFloat` converts the string to a floating-point number, allowing you to perform arithmetic operations correctly.
+
+// However, it's worth noting that `parseFloat` can also parse strings that contain numbers followed by non-numeric characters. For example, `parseFloat("10abc")` would return `10`. If you want to ensure that the input is a valid number, you might want to use a different approach, such as using `Number()` or checking if the input is a valid number using a regular expression.
+
+// In your case, using `parseFloat` is a good approach, but you might want to consider adding additional checks to ensure that the input is a valid number. For example:
+
+// ```
+// const num1 = parseFloat(num1Input.value);
+// if (isNaN(num1) || num1Input.value.trim() === "") {
+//   // handle invalid input
+// }
+// ```
+
+// This way, you can ensure that the input is not only a valid number but also not empty.
+
 
 // 4. Use a `for...of` loop to iterate over a string and print each character.
 let fruits = ["Apple", "Mango", "Banana"]
@@ -373,6 +395,13 @@ for(let item of fruits){
     console.log(`${item}`)
  }
 
+
+ for(let d = 100; d <= 200; d++){
+    if(d % 7 !== 0){
+        console.log(d)
+    }
+}
+
 // *Tips:*
 
 // - Make sure to use the correct loop type for each problem.
@@ -380,3 +409,60 @@ for(let item of fruits){
 // - Test your code thoroughly to ensure it works as expected.
 
 // I hope this assignment helps you practice your loop skills! Let me know if you have any questions or need further clarification.
+
+
+const num1Input = document.querySelector('.num1')
+const operationSelect = document.querySelector('.operation')
+const num2Input = document.querySelector('.num2')
+const calculateButton = document.querySelector('.calculate')
+const resultElement = document.querySelector('.result')
+
+
+calculateButton.addEventListener("click", () => {
+    const num1 = parseFloat(num1Input.value) //parseFloat() is used here to convert the input values (which are strings by default) into numbers, 
+    // specifically floating-point numbers (i.e., numbers that can have decimals).
+    const operation = operationSelect.value
+    const num2 = parseFloat(num2Input.value)
+    let result;
+
+    if (isNaN(num1) || isNaN(num2)) {
+        resultElement.textContent = "please enter valid numbers"
+        return
+    }else{
+        switch(operation){
+            case '+':
+                result = num1 + num2;
+                break
+            case '-':
+                result = num1 - num2;
+                break
+            case '*':
+                result = num1 * num2
+                break
+            case '/':
+                result = num1 / num2
+                break
+            default:
+                result = "Invalid operation"
+
+        }
+    }
+
+    resultElement.textContent = `Result: ${result}`
+
+    // if (operation === "+") {
+//     result = num1 + num2;
+// }else if (operation === "-") {
+//     result = num1 - num2;
+// } else if (operation === "*") {
+//     result = num1 * num2;
+// }else if (operation === "/") {
+//     result = num1 / num2
+// }else{
+//     result = "Cannot divide by zero!"
+// }
+// resultElement.textContent = `Result: ${result}`
+
+
+})
+
