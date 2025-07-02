@@ -88,18 +88,6 @@
     padding: 20px;
     border-radius: 8px;
 }
-
-
-/* .calculator{
-    width: 50%;
-    height: 50%;
-    margin: 30px auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    background-color: blue;
-} */
 .calculator input{
     padding: 15px;
     font-size: 20px;
@@ -112,4 +100,29 @@
 .calculate{
     padding: 8px;
     cursor: pointer;
+}
+
+.assign {
+    width: 50%;
+    height: 50%;
+    margin:30px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.assign input{
+    padding: 15px;
+    font-size: 20px;
+    
+}
+.submit{
+    padding: 8px;
+    cursor: pointer;
+}
+.vote {
+    text-align: center;
 }

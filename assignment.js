@@ -466,3 +466,21 @@ calculateButton.addEventListener("click", () => {
 
 })
 
+const nameInput = document.querySelector('.name')
+const ageInput = document.querySelector('.age')
+const submitButton = document.querySelector('.submit')
+const getElements = document.querySelector('.get')
+
+
+submitButton.addEventListener("click", () => {
+    const name = nameInput.value
+    const age = parseInt(ageInput.value)
+
+    if (name === "" || age === "" || isNaN(age)) {
+        getElements.textContent = "Please fill out the form fields"
+    }else{
+        const get = age >= 18 ? "You are Eligiable to vote!" : "You are not Eligiable to vote!"
+        getElements.textContent = `Hello, ${name}! ${get}`
+    }
+})
+
