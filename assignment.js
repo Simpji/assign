@@ -479,8 +479,13 @@ submitButton.addEventListener("click", () => {
     if (name === "" || age === "" || isNaN(age)) {
         getElements.textContent = "Please fill out the form fields"
     }else{
-        const get = age >= 18 ? "You are Eligiable to vote!" : "You are not Eligiable to vote!"
-        getElements.textContent = `Hello, ${name}! ${get}`
+        const get = age >= 18 ? `Hello, ${name}! You are eligible to vote!` : `Hello, ${name}! You are not eligible to vote! You must be 18 or above before you can vote.`
+      getElements.textContent = get
+    if (age < 18) {
+        alert(`You are ${18 - age} years away from being eligiable`)
     }
+    }
+
+   
 })
 
