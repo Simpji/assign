@@ -512,9 +512,9 @@ submitsButton.addEventListener("click", () => {
 
 const question = [
     {
-         question: "what: is the capital of France?",
+         question: "what: is the capital of Germany?",
          answers:["London", "Berlin", "UK", "Lagos", "paris"],
-         correct: "paris"
+         correct: "berlin"
     }
 ]
 
