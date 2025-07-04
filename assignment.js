@@ -514,7 +514,7 @@ const question = [
     {
          question: "what: is the capital of Germany?",
          answers:["London", "Berlin", "UK", "Lagos", "paris"],
-         correct: "berlin"
+         correct: "Berlin"
     }
 ]
 
