@@ -489,3 +489,83 @@ submitButton.addEventListener("click", () => {
    
 })
 
+
+const answerInput = document.querySelector('.answer')
+const submitsButton = document.querySelector('.submits')
+const showElement = document.querySelector('.show')
+
+submitsButton.addEventListener("click", () => {
+    const answer = answerInput.value.trim()
+
+    if (answer === "") {
+        showElement.textContent = "Form fill can't be empty before submiting"
+    }else if (answer.toLowerCase() === "paris") {
+        showElement.textContent = "Correct Answer"
+    }else{
+        showElement.textContent = "Incorrect Answer"
+    }
+
+    showElement.textContent = `Show: ${show}`
+})
+
+
+
+const question = [
+    {
+         question: "what: is the capital of France?",
+         answers:["London", "Berlin", "UK", "Lagos", "paris"],
+         correct: "paris"
+    }
+]
+
+
+const questionElement = document.querySelector('.question')
+const answersElement = document.querySelector('.answers')
+const submitBtn = document.querySelector('.submit-btn')
+const scoreElement = document.querySelector('.score')
+const resulttElement = document.querySelector('.resultt')
+
+
+
+let currentQuestion = 0;
+let scores = 0
+
+
+const displayQuestion = () => {
+    const currentQ = question[currentQuestion]
+    questionElement.textContent = currentQ.question
+    answersElement.innerHTML = "";
+    currentQ.answers.forEach((answer) =>{
+        const li = document.createElement("li")
+        const radio = document.createElement("input")
+        radio.type = "radio"
+        radio.name = "answer"
+        radio.value = answer
+        li.appendChild(radio)
+        li.appendChild(document.createTextNode(answer))
+        answersElement.appendChild(li)
+    })
+}
+
+
+function checkAnswer() {
+  const selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+  const currentQ = question[currentQuestion];
+  if (selectedAnswer === currentQ.correct) {
+    scores++;
+    scoreElement.textContent = `Score: ${scores}`;
+    resulttElement.textContent = 'Correct!';
+  } else {
+    resulttElement.textContent = `Incorrect! The correct answer was ${currentQ.correct}.`;
+  }
+  currentQuestion++;
+  if (currentQuestion >= question.length) {
+    // Quiz finished!
+  } else {
+    displayQuestion();
+  }
+}
+
+submitBtn.addEventListener("click", checkAnswer)
+displayQuestion()
+
