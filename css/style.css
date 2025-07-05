@@ -13,8 +13,8 @@
 .couter{
     text-align: center;
     background-color: aqua;
-    height: 50vh;
-    padding-top: 20px;
+    height: 20vh;
+    padding-top: 10px;
 }
 .coute{
     color: red;
@@ -38,7 +38,6 @@
     list-style: none;
     cursor: pointer;
     padding: 1%;
-    /* border-radius: 30px; */
 }
 
 .res{
@@ -154,5 +153,67 @@
 }
 
 .submit-btn{
+    cursor: pointer;
+}
+
+.change{
+    text-align: center;
+    background-color: blue;
+    color: #fff;
+}
+.change, h1, h3, input{
+    padding: 15px;
+}
+.btn-submit{
+    background-color: orange;
+    color: #fff;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.same{
+    text-align: center;
+    margin: 20px;
+}
+.same1{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.same1 button{
+    cursor: pointer;
+}
+.news{
+    text-align: center;
+    margin-top: 20px;
+    padding: 2% 0;
+}
+.act{
+    width: 30%;
+    height: 30%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    background-color: blueviolet;
+}
+
+.act input{
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.login{
+    border-radius: 20px;
     cursor: pointer;
 }

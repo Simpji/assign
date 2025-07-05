@@ -536,7 +536,6 @@ const counts = () => {
     }
 }
 
-
 // const result = document.querySelector('.result')
 // const decrease = document.querySelector('.decrease')
 // const reset = document.querySelector('.reset')
@@ -553,3 +552,52 @@ const counts = () => {
 // increase.addEventListener("click", () => {
 //     result.innerHTML++;
 // })
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    document.querySelector(".forms").onsubmit = onsubmitHandler
+})
+
+function onsubmitHandler(){
+    const MyTex = document.querySelector(".MyTex").value
+    document.querySelector(".my-text").innerHTML = MyTex
+    return false
+}
+
+// const changesElement = document.querySelector('.changes')
+// const buttonElement = document.querySelectorAll('button')
+
+// buttonElement.forEach(buttonElement => {
+//     buttonElement.addEventListener("click", () =>{
+//        const color = buttonElement.className //classList[0]
+//        changesElement.style.color = color
+
+//     })
+// })
+
+
+document.addEventListener("DOMContentLoaded", ()=> {
+    document.querySelector(".red").onclick = function(){
+        document.querySelector(".changes").style.color = "red"
+    }
+
+    document.querySelector(".green").onclick = function(){
+        document.querySelector(".changes").style.color = "green"
+    }
+     document.querySelector(".yellow").onclick = function(){
+        document.querySelector(".changes").style.color = "yellow"
+    }
+})
+
+document.addEventListener("DOMContentLoaded", ()=> {
+    document.querySelector(".act").onsubmit = function(){
+        if (document.querySelector(".email").value === "") {
+            alert("Please enter your email address")
+            return false
+        }else if (document.querySelector(".password").value === "") {
+            alert("Please enter your password")
+            return false
+        }else{
+            return true
+        }
+    }
+})
