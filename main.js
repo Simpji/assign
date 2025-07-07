@@ -36,7 +36,7 @@
 // console.log(sym)
 // console.log(typeof(sym))
 
-
+// operators are special symbols or keywords used to perform operations on values (also called operands). These operations can be mathematical, logical, or used for assignment, comparison, etc.
 // // creating ternary operator
 
 // // let age = 20
@@ -588,16 +588,41 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
 })
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    document.querySelector(".act").onsubmit = function(){
-        if (document.querySelector(".email").value === "") {
-            alert("Please enter your email address")
-            return false
-        }else if (document.querySelector(".password").value === "") {
-            alert("Please enter your password")
-            return false
-        }else{
-            return true
-        }
+// document.addEventListener("DOMContentLoaded", ()=> {
+//     document.querySelector(".act").onsubmit = function(){
+//         if (document.querySelector(".email").value === "") {
+//             alert("Please enter your email address")
+//             return false
+//         }else if (document.querySelector(".password").value === "") {
+//             alert("Please enter your password")
+//             return false
+//         }else{
+//             return true
+//         }
+//     }
+// })
+
+const emailInput = document.querySelector('.email')
+const passwordInput = document.querySelector('.password')
+const loginButton = document.querySelector('.login')
+const longForm = document.querySelector('.act')
+const hereElement = document.querySelector('.here')
+
+longForm.addEventListener("submit", (e) => {
+    const email = emailInput.value
+    const password = passwordInput.value
+
+
+    if (email === "" && password === ""){
+        hereElement.textContent = "Please fill out the form fields"
+        e.preventDefault()
+    }else if (email === "") {
+        hereElement.textContent = "Email is empty"
+        e.preventDefault()
+    }else if (password === "") {
+        hereElement.textContent = "Password is empty"
+        e.preventDefault()
     }
 })
+
+

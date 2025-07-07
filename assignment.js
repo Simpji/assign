@@ -569,3 +569,31 @@ function checkAnswer() {
 submitBtn.addEventListener("click", checkAnswer)
 displayQuestion()
 
+
+const num3Input = document.querySelector('.num3')
+const submitB = document.querySelector('.grade .submit')
+const scorElement = document.querySelector('.scor')
+
+submitB.addEventListener("click", () => {
+    const num3 = num3Input.value.trim()
+    if(num3 === ""){
+        scorElement.textContent = "Please enter your score"
+        return;
+    }
+
+    const score = parseFloat(num3)
+    let grade;
+    if (isNaN(score)) {
+        scorElement.textContent = "Invalid score"
+        return;
+    }else if(score >= 90){
+        grade = "Excellent"
+    }else if (score >= 80){
+        grade = "Very Good"
+    }else if (score >= 60) {
+        grade = "Pass"
+    }else{
+        grade = "Fail"
+    }
+    scorElement.textContent = `Score: ${score}  ${grade}`
+})
