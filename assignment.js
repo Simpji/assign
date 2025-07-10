@@ -514,7 +514,7 @@ const question = [
     {
          question: "what: is the capital of Germany?",
          answers:["London", "Berlin", "UK", "Lagos", "paris"],
-         correct: "Berlin"
+         correct: "Berlin",
     }
 ]
 
@@ -597,3 +597,137 @@ submitB.addEventListener("click", () => {
     }
     scorElement.textContent = `Score: ${score}  ${grade}`
 })
+
+
+// const gameInput = document.querySelector('.gameInp')
+// const playButton = document.querySelector('.play')
+// const scoreBoardElement = document.querySelector('.scoreboard')
+// const choices = ["rock", "scissors", "paper"]
+
+// playButton.addEventListener("click", () => {
+//     const userChoice = gameInput.value.toLowerCase()
+//     if(!choices.includes(userChoice)) {
+//         scoreBoardElement.textContent = "Invalid input: Please enter rock paper or scissors"
+//         return
+//     }
+//     const compareChoice = choices[Math.floor(Math.random()* choices.length)]
+//     scoreBoardElement.textContent = (`User choice: ${userChoice} | computer choice: ${compareChoice}`)
+
+//     setTimeout(() => {
+//         if (userChoice === compareChoice) {
+//             scoreBoardElement.textContent = (`it's a tie! User chose ${userChoice} and computer chose ${compareChoice}`)
+
+//       if (userChoice === compareChoice) {
+//         scoreBoardElement.textContent = "It's a tie!"
+//     }else if ( 
+//      (userChoice === "rock" && compareChoice === "scissors") ||
+//      (userChoice === "scissors" && compareChoice === "paper") || 
+//      (userChoice === "paper" && compareChoice === "rock")
+
+//     ){
+//         scoreBoardElement.textContent = (`User win! user chose ${userChoice} and computer win ${compareChoice}`)
+//     }else{
+//         scoreBoardElement.textContent = (`Computer win! user chose ${userChoice} and computer chose ${compareChoice}`)
+//     }
+//         }
+//     },2000)
+
+// })
+
+
+
+
+
+const gameInput = document.querySelector('.gameInp')
+const playButton = document.querySelector('.play')
+const scoreBoardElement = document.querySelector('.scoreboard')
+const choices = ["rock", "scissors", "paper"]
+
+playButton.addEventListener("click", () => {
+  const userChoice = gameInput.value.toLowerCase()
+  if (!choices.includes(userChoice)) {
+    scoreBoardElement.textContent = "Invalid input: Please enter rock, paper, or scissors."
+    return
+  }
+
+  const compareChoice = choices[Math.floor(Math.random() * choices.length)]
+  scoreBoardElement.textContent = (`User choice: ${userChoice} | Computer choice: ${compareChoice}`)
+
+  setTimeout(() => {
+    if (userChoice === compareChoice) {
+      scoreBoardElement.textContent = (`It's a tie! User chose ${userChoice} and Computer chose ${compareChoice}`)
+    } else if (
+      (userChoice === "rock" && compareChoice === "scissors") ||
+      (userChoice === "scissors" && compareChoice === "paper") ||
+      (userChoice === "paper" && compareChoice === "rock")
+    ) {
+      scoreBoardElement.textContent = (`User wins! User chose ${userChoice} and Computer chose ${compareChoice}`)
+    } else {
+      scoreBoardElement.textContent = (`Computer wins! User chose ${userChoice} and Computer chose ${compareChoice}`)
+    }
+  }, 2000)
+})
+
+
+const answerNput = document.querySelector('.answer-input')
+const submitUtton = document.querySelector('.submit-button')
+const scoreHowElement = document.querySelector('.score-show')
+const questionHeading = document.querySelector('.question-text')
+const feedBackElement = document.querySelector('.feedback')
+
+const questions = [
+    { question: "What is 5 + 9", correct: "14" },
+    { question: "What is the capital of France", correct: "paris" },
+    { question: "What is 10 * 35", correct: "350" }
+];
+
+
+let currentQuestionIndex = 0;
+let score = 0;
+let questionTimer;
+
+function showQuestion(){
+    questionHeading.textContent = questions[currentQuestionIndex].question;
+    answerNput.value = "";
+    answerNput.focus();
+
+    questionTimer = setTimeout(() => {
+        endGame("⏰ Time's up! Game Over.")
+    }, 9000);
+}
+
+function endGame(message) {
+    questionHeading.textContent = message;
+    submitUtton.disabled = true;
+    answerNput.disabled = true;
+    feedBackElement.textContent = "";
+}
+
+submitUtton.addEventListener("click", () => {
+    clearTimeout(questionTimer)
+
+    const userAnswer = answerNput.value.trim().toLowerCase()
+    const correctAnswer = questions[currentQuestionIndex].correct.toLowerCase();
+
+    if (userAnswer === correctAnswer) {
+        score++;
+        feedBackElement.textContent = "✅ Correct!";
+    }else{
+        feedBackElement.textContent = "❌ Wrong!";
+    }
+
+     scoreHowElement.textContent  = `Score: ${score}`
+    currentQuestionIndex++
+
+    if (currentQuestionIndex < questions.length) {
+        setTimeout(() => {
+            feedBackElement.textContent = ""
+            showQuestion()
+        }, 2000);
+    }else{
+        endGame("🎉 Quiz Completed! ✅");
+    }
+})
+
+showQuestion();
+
