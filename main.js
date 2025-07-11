@@ -622,6 +622,9 @@ longForm.addEventListener("submit", (e) => {
     }else if (password === "") {
         hereElement.textContent = "Password is empty"
         e.preventDefault()
+    }else{
+        emailInput.value = "";
+        passwordInput.value = "";
     }
 })
 

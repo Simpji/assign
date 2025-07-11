@@ -682,7 +682,7 @@ const questions = [
 ];
 
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0; //tracks which question the user is currently on.
 let score = 0;
 let questionTimer;
 
@@ -728,6 +728,35 @@ submitUtton.addEventListener("click", () => {
         endGame("🎉 Quiz Completed! ✅");
     }
 })
-
 showQuestion();
 
+
+
+// . *Form Validation*: Create a form that validates user input (e.g., checks for empty fields, valid email addresses, etc.).
+const forIn = document.querySelector('.for-input');
+const forPa = document.querySelector('.for-password');
+const forSu = document.querySelector('.for-submit');
+const forMessageElement = document.querySelector('.for-message')
+
+
+forSu.addEventListener("click", (e) => {
+    const email = forIn.value.trim()
+    const password = forPa.value.trim()
+
+    if (email === "" && password === "") {
+        forMessageElement.textContent = "Please fill out the form fields"
+        e.preventDefault()
+    }else if (email === "") {
+        forMessageElement.textContent = "Email is empty"
+        e.preventDefault()
+    }else if (password === "") {
+        forMessageElement.textContent = "Password is empty"
+        e.preventDefault()
+    }else{
+         forMessageElement.textContent = "You have successfully logged in!";
+        forMessageElement.style.color = "green"; // Optional: make success green
+        forIn.value = "";
+        forPa.value = "";
+        e.preventDefault(); // prevent form from submitting for demo purposes
+    }
+})
