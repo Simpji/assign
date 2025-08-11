@@ -1531,7 +1531,7 @@ const proccessData = async() => {
         console.log(error)
     }
 }
-proccessData()
+// proccessData()
 
 
 // 2. *Update Student*: Create a function that updates a student's details in the `students` array based on their `id`.
@@ -1549,7 +1549,7 @@ const updateStudent = async (id, updates) => {
         
     }
 }
-updateStudent(3, {name: "Simple Chinonso"})
+// updateStudent(3, {name: "Simple Chinonso"})
 // 3. *Search Students*: Create a function that searches for students in the `students` array based on their `name` or `id`.
 const searchStudent = async (id, name) => {
     try {
@@ -1583,11 +1583,11 @@ const sortStudent = async (sortBy) => {
     
   }
 }
-sortStudent( "name")
-       .then((sortedStudents) => console.log(sortedStudents));
+// sortStudent( "name")
+//        .then((sortedStudents) => console.log(sortedStudents));
        
-sortStudent("id")
-      .then((sortedStudents) => console.log(sortedStudents))
+// sortStudent("id")
+//       .then((sortedStudents) => console.log(sortedStudents))
      
 
 // These assignments should help you practice working with arrays, promises, and async/await syntax.
