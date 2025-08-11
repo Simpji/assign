@@ -3,6 +3,9 @@
     margin: 0%;
     list-style: none;
 }
+html, body {
+    overflow-x: hidden; 
+}
 
 .java{
     text-align: center;
@@ -268,4 +271,152 @@
 
 .for-submit:hover {
   background: #357abd;
+}
+
+.crud{
+    text-align: center;
+    margin: 3%;
+}
+
+.todo1{
+    width: 30%;
+    margin: 2% auto;
+    text-align: center;
+}
+.todo2{
+    width: 400px;
+    min-height: 300px;
+    background: #fff;
+     box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
+     border-radius: 3px;
+     margin-top: 5%;
+     padding: 1rem; 
+}
+.todo2 {
+    transition: height 0.3s ease-in-out;
+}
+
+.todo3 {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    /* max-height: 150px; */
+    overflow-y: auto;
+    width: 90%;
+    text-align: left;
+}
+.todo3 li {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo3 button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.world{
+    width: 90%;
+    text-align: center;
+    text-transform: uppercase;
+    /* letter-spacing: 0.4em; */
+    /* background: black; */
+    font: 400 1em /1.5 "Neuton";
+    color: #ffffff40;
+    margin: 3%;
+    /* margin-left: 27rem; */
+    /* display: inline-block; */
+    border: 4px double #ffffff40;
+    border-width: 4px 0;
+    /* padding: 1.5em 0em; */
+}
+
+.world h5 {
+    font: 500 4em /1 "oswald", sans-serif;
+    letter-spacing: 0;
+    padding: 0.22em 0 0.225em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 60px rgb(255, 255, 255, 0.5);
+    background: url("https://codetheworld.io/wp-content/uploads/2023/11/rNPwjWM-animated-text-fill.png") repeat-y;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: anim 80s linear infinite;
+}
+
+@-webkit-keyframes anim {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100%{
+        background-position: 100% 50%;
+    }
+}
+
+.butt{
+    cursor: pointer;
+}
+
+.app-container{
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.weather-app{
+    width: 400px;
+    min-height: 200px;
+    background: #4a90e2;
+    box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
+    border-radius: 20px;
+    padding: 1rem;
+}
+.search-btn{
+    cursor: pointer;
+}
+.location{
+    color: #fff;
+    font-size: 20px;
+}
+.weather-app li{
+    color: #fff;
+    font-size: 20px;
+}
+
+@media (max-width: 768px){
+    .todo1{
+        width: 90%;
+        margin: 3% auto;
+        text-align: center;
+    }
+    .todo2{
+        width: 100%;
+        max-width: 400px;
+        background: #fff;
+        box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
+        border-radius: 3px;
+        margin-top: 5%;
+        padding: 1rem; 
+        box-sizing: border-box;
+    }
+    .app-container{
+        width: 90%;
+        margin: 8% auto;
+        text-align: center;
+    }
+
+    .weather-app{
+        width: 100%;
+        max-width: 260px;
+        background: #4a90e2;
+        box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
+        border-radius: 20px;
+        padding: 1rem;
+        /* margin: 3%; */
+    }
 }

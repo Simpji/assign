@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="flex flex-row justify-center space-x-5 space-2xl mt-10">
+        <button class="bg-blue-500 p-[20px] text-white rounded" onclick="getText()"
+        >
+        Get Text
+        </button>
+
+        <button class="bg-yellow-500 p-[20px] text-white rounded" onclick="getJson()">
+            Get Json
+        </button>
+
+        <button class="bg-red-500 p-[20px] text-white rounded" onclick="getApi()">
+            Get API
+        </button>
+    </div>
+
+
+    <div id="demo" class="text-center text-2xl mt-10"></div>
+    <ul class="text-center text-2xl mt-10"></ul>
+
+    <h1 class="text-2xl bg-blue-500 text-center text-red">heloo</h1>
+    <script src="/async.js"></script>
+</body>
+</html>
