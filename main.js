@@ -424,18 +424,18 @@ console.log(d * 20)
 //DOM
 // The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a document as a tree-like data structure, where each node in the tree represents an element, attribute, or piece of text in the document.
 
-const headerElement = document.querySelector("#header")
-headerElement.style.backgroundColor = "red"
-headerElement.style.color = "white"
-headerElement.style.textAlign = "center"
-headerElement.style.fontSize = "25px"
+// const headerElement = document.querySelector("#header")
+// headerElement.style.backgroundColor = "red"
+// headerElement.style.color = "white"
+// headerElement.style.textAlign = "center"
+// headerElement.style.fontSize = "25px"
 
-const listElement = document.querySelectorAll("li")
-    listElement.forEach((item) => {
-        item.style.fontSize = "30px"
-        item.style.textAlign = "center"
-        item.style.color = "purple"
-    })
+// const listElement = document.querySelectorAll("li")
+//     listElement.forEach((item) => {
+//         item.style.fontSize = "30px"
+//         item.style.textAlign = "center"
+//         item.style.color = "purple"
+//     })
 
 
 //     In JavaScript, events refer to actions or occurrences that happen in a web page, such as user interactions, network requests, or changes in the state of a page. JavaScript provides a way to respond to these events using event handlers or event listeners.
@@ -465,12 +465,12 @@ const listElement = document.querySelectorAll("li")
 
 
 
-const text = document.querySelector(".MyText")
-const button = document.querySelector(".MyButton")
+// const text = document.querySelector(".MyText")
+// const button = document.querySelector(".MyButton")
  
-button.addEventListener("click", () => {
-    text.innerHTML = (" I clicked the button")
-})
+// button.addEventListener("click", () => {
+//     text.innerHTML = (" I clicked the button")
+// })
 
 
 // let count = 0
