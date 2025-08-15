@@ -14,6 +14,37 @@
             <li><a href="">Pro</a></li>
         </ul>
     </div>
+
+    <!-- Personal Finance Tracker*: Build a personal finance tracker that allows users to track their income and expenses. You can use JavaScript to calculate totals and display charts and graphs. -->
+    <div class="wrapper">
+    <div class="personal">
+        <h1>Personal Finance</h1>
+        <div class="finance">
+            <h2>Current Balance:<span class="balance">$0.00</span></h2>
+            <div class="total">
+                <p>Income<span class="total-income">$0.00</span></p>
+                <p>expense<span class="total-expense">$0.00</span></p>
+            </div>
+        </div>
+
+        <form class="transaction-form">
+            <input type="text" class="description" placeholder="Description" required>
+            <input type="number" class="amount" placeholder="Amount" required>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">expense</option>
+            </select>
+             <button class="submit">Add Transaction</button>
+        </form>
+        
+        <div class="transaction-history">
+            <h3>Transaction History</h3>
+            <ul class="transaction-list"></ul>
+        </div>
+     </div>
+    </div>
+
+    
     <div class="todo1">
         <div class="todo2">
         <p class="world"><marquee behavior="" direction="left">
@@ -37,6 +68,8 @@
         <ul class="weather-list"></ul>
         </div>
     </div>
+
+    
     <script src="/pro.js"></script>
 </body>
 </html>

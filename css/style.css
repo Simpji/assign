@@ -300,7 +300,7 @@ html, body {
 }
 
 .todo1{
-    width: 30%;
+    width: 25%;
     margin: 2% auto;
     text-align: center;
 }
@@ -383,11 +383,12 @@ html, body {
     cursor: pointer;
 }
 
-.app-container{
-    width: 30%;
-    margin: 0 auto;
-    text-align: center;
+.app-container {
+  width: 25%;
+  margin: 5% auto; /* top margin only */
+  text-align: center;
 }
+
 
 .weather-app{
     width: 400px;
@@ -396,6 +397,7 @@ html, body {
     box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
     border-radius: 20px;
     padding: 1rem;
+    margin-bottom: 2rem;
 }
 .search-btn{
     cursor: pointer;
@@ -407,6 +409,109 @@ html, body {
 .weather-app li{
     color: #fff;
     font-size: 20px;
+}
+
+ .wrapper {
+  margin: 10% 0; 
+}
+
+.personal{
+    width: 400px;
+    min-height: 200px;
+    text-align: center;
+    /* height: 500px; */
+    background: #fff;
+    box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+}
+.personal h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.finance h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.balance {
+  font-weight: bold;
+  color: #2ecc71;
+  margin-left: 0.5rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.total-income {
+  color: #2ecc71;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.total-expense {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.75rem; */
+  margin: 1.5rem 0;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form button {
+  padding: 10px;
+  margin: 1%;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.transaction-form button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.transaction-form button:hover {
+  background-color: #357ab8;
+}
+
+.transaction-history h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.transaction-list li {
+  background: #f0f0f0;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 768px){

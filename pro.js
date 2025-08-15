@@ -151,25 +151,81 @@ const search = async () => {
             location.textContent = "";
             list.innerHTML = "";
         }
-
 }
 
-// Now that you've learned JavaScript, it's time to put your skills to the test with a project. Here are some project ideas that you might find interesting:
+let transactions = []
+let totalIncome = 0;
+let totalExpense = 0
 
-// 1. *To-Do List App*: Create a simple to-do list app that allows users to add, remove, and edit tasks. You can use local storage to save the tasks.
-// 2. *Weather App*: Build a weather app that fetches data from a weather API and displays the current weather and forecast for a given location.
-// 3. *Quiz Game*: Create a quiz game that asks users a series of questions and keeps track of their scores. You can use JavaScript to generate random questions and track user answers.
-// 4. *Personal Finance Tracker*: Build a personal finance tracker that allows users to track their income and expenses. You can use JavaScript to calculate totals and display charts and graphs.
-// 5. *Simple Chatbot*: Create a simple chatbot that responds to user input. You can use JavaScript to parse user input and generate responses.
-// 6. *Image Gallery*: Build an image gallery that displays a collection of images. You can use JavaScript to add effects like lightbox and slideshow.
-// 7. *Timer App*: Create a timer app that allows users to set a timer for a specific amount of time. You can use JavaScript to count down the time and display alerts.
-// 8. *Random Quote Generator*: Build a random quote generator that displays a new quote each time the user clicks a button. You can use JavaScript to fetch quotes from an API or generate them randomly.
-// 9. *Simple Calculator*: Create a simple calculator that performs basic arithmetic operations like addition, subtraction, multiplication, and division. You can use JavaScript to handle user input and calculate results.
-// 10. *Rock, Paper, Scissors Game*: Build a Rock, Paper, Scissors game that allows users to play against the computer. You can use JavaScript to generate random choices and determine the winner.
+const addTransaction = (e) => {
+    e.preventDefault()
+    const amount = parseFloat(document.querySelector(".amount").value)
+    const description = document.querySelector(".description").value
+    const type = document.querySelector("#type").value
 
-// Which project idea interests you the most? Do you have any specific requirements or features in mind for your project?
 
-// Let's get started! 😊
+    if (type === "income") {
+        totalIncome += amount
+    }else{
+        if (totalIncome < totalExpense + amount) {
+        alert("Insufficient balance. Transaction cannot be completed");
+        return;
+    }
+        totalExpense += amount
+    }
+
+    const transaction = {id: Date.now(),
+        type,
+        amount,
+        description
+    }
+
+    transactions.push(transaction)
+    updateSummary()
+    displayTransactions()
+    clearForm()
+};
+
+document.querySelector(".transaction-form").addEventListener("submit", addTransaction)
+
+function updateSummary(){
+    document.querySelector(".total-income").textContent = `$${totalIncome.toFixed(2)}`
+    document.querySelector(".total-expense").textContent = `$${totalExpense.toFixed(2)}`
+    document.querySelector(".balance").textContent = `$${(totalIncome - totalExpense).toFixed(2)}`
+}
+const displayTransactions = () => {
+    const transactionList = document.querySelector(".transaction-list")
+    transactionList.innerHTML = "";
+
+    transactions.forEach((transaction, index) =>{
+        const transactionElement = document.createElement("li")
+        transactionElement.classList.add("transaction")
+        transactionElement.innerHTML = `${transaction.description}: ${transaction.amount.toFixed(2)}
+        <button  onclick="deleteTransaction(${transaction.id})">Delete</button>
+        `
+        transactionList.appendChild(transactionElement)
+    }) 
+}
+
+const clearForm = () => {
+    document.querySelector(".amount").value = ""
+    document.querySelector(".description").value = ""
+}
+const deleteTransaction = (id)=>{
+    // transaction is just a variable that holds one item from list of transactions — the one that matches the given id.
+    const transaction = transactions.find(tran => tran.id ===id)
+    if (transaction) {
+        if (transaction.type === "income") {
+            totalIncome -= transaction.amount
+        }else{
+            totalExpense -= transaction.amount
+        }
+    }
+    transactions = transactions.filter(tran => tran.id !== id)
+    updateSummary()
+    displayTransactions()
+}
+
 
 
 
