@@ -301,7 +301,7 @@ html, body {
 
 .todo1{
     width: 25%;
-    margin: 2% auto;
+    margin: 0 auto;
     text-align: center;
 }
 .todo2{
@@ -310,8 +310,7 @@ html, body {
     background: #fff;
      box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
      border-radius: 3px;
-     margin-top: 5%;
-     padding: 1rem; 
+
 }
 .todo2 {
     transition: height 0.3s ease-in-out;
@@ -355,7 +354,7 @@ html, body {
     border-width: 4px 0;
     /* padding: 1.5em 0em; */
 }
-
+/* 
 .world h5 {
     font: 500 4em /1 "oswald", sans-serif;
     letter-spacing: 0;
@@ -377,7 +376,7 @@ html, body {
     100%{
         background-position: 100% 50%;
     }
-}
+} */
 
 .butt{
     cursor: pointer;
@@ -532,14 +531,14 @@ html, body {
     }
     .app-container{
         width: 90%;
-        margin: 8% auto;
+        margin: 3% auto;
         text-align: center;
     }
 
     .weather-app{
         width: 100%;
-        max-width: 260px;
-        background: #4a90e2;
+        max-width: 250px;
+        background: #fff;
         box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
         border-radius: 20px;
         padding: 1rem;
@@ -547,7 +546,7 @@ html, body {
     .wrapper {
         margin: 40% auto; 
     }
-        .personal{
+    .personal{
         width: 100%;
         max-width: 400px;
         margin: 5%;
@@ -556,5 +555,13 @@ html, body {
         box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
         border-radius: 12px;
         padding: 2rem;
+ }
+  .location{
+    color: black;
+    font-size: 20px;
+ }
+  .weather-app li{
+    color: black;
+    font-size: 20px;
  }
 }
