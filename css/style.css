@@ -392,7 +392,7 @@ html, body {
 .weather-app{
     width: 400px;
     min-height: 200px;
-    background: #4a90e2;
+    background: #fff;
     box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
     border-radius: 20px;
     padding: 1rem;
@@ -402,11 +402,11 @@ html, body {
     cursor: pointer;
 }
 .location{
-    color: #fff;
+    color: black;
     font-size: 20px;
 }
 .weather-app li{
-    color: #fff;
+    color: black;
     font-size: 20px;
 }
 
@@ -513,7 +513,7 @@ html, body {
   align-items: center;
 }
 
-@media (max-width: 768px){
+/* @media (max-width: 768px){
     .todo1{
         width: 90%;
         margin: 3% auto;
@@ -564,4 +564,33 @@ html, body {
     color: black;
     font-size: 20px;
  }
+} */
+ @media (max-width: 768px) {
+  .todo1,
+  .app-container {
+    width: 90%;
+    margin: 5% auto;
+  }
+  .wrapper{
+    width: 90%;
+    margin: 30% auto;
+  }
+
+  .todo2,
+  .weather-app,
+  .personal {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .weather-app {
+    background: #fff;
+  }
+
+  .weather-app li,
+  .location {
+    color: #000;
+  }
 }
