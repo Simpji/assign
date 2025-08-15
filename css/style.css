@@ -537,7 +537,7 @@ html, body {
     }
 
     .weather-app{
-         width: 100%;
+        width: 100%;
         max-width: 260px;
         background: #4a90e2;
         box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
@@ -545,12 +545,12 @@ html, body {
         padding: 1rem;
     }
     .wrapper {
-        width: 80%;
         margin: 40% auto; 
     }
         .personal{
-        width: 90%;
+        width: 100%;
         max-width: 400px;
+        margin: 5%;
         text-align: center;
         background: #fff;
         box-shadow: 3px 3px 12px rgba(128, 0, 128, 0.3);
